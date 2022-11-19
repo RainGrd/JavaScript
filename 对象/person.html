@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象演示</title>
+    <script>
+        /* function Person() {}
+        Person.prototype.name = 'bangbang';
+        Person.prototype.age = 18;
+        Person.prototype.job = 'programmer';
+        Person.prototype.dream = function () { 
+            console.log('Change yourself');
+        }
+        var person1 = new Person();
+        person1.dream(); //Change yourself
+        console.log(new Person());
+
+        var person2 = new Person();
+        person2.dream();
+        //判断两个实例继承的方法和属性是否全等
+        console.log(person1.dream === person2.dream);
+        console.log(person1.age === person2.age); */
+        function Person(nation, color) {
+            this.nation = nation;
+            this.skinColor = color;
+        }
+        //返回民族
+        Person.prototype.getNation = function () {
+            return this.nation;
+        }
+        //返回肤色
+        Person.prototype.getSkinColor = function () {
+            return this.skinColor;
+        }
+        //创建构造函数
+        function Woman(sex) {
+            this.sex = sex;
+        }
+        //继承Person构造函数的原型的实例
+        Woman.prototype = new Person("汉族", "红色");
+        //返回性别方法
+        Woman.prototype.getSex = function () {
+            return this.sex;
+        }
+        var woman1 = new Woman('男');
+        console.log("民族:" + woman1.getNation());
+        console.log("颜色:" + woman1.getSkinColor());
+        console.log("性别:" + woman1.getSex());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

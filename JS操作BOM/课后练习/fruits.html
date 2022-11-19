@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机水果</title>
+</head>
+<script>
+    //水果数组
+    var fruits = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'peach'];
+
+    function getFruits() {
+        //利用随机数匹配索引
+        var index = Math.floor(Math.random() * fruits.length);
+        document.write('您得到的水果是:' + fruits[index]);
+        console.log(fruits[index]);
+    }
+    //调用函数
+    getFruits();
+</script>
+
+<body>
+
+</body>
+
+
+</html>

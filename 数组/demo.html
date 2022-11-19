@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组演示</title>
+    <script>
+      // var array=['周珩',17,true,10.23];
+      // document.write(array);
+      // //获取字符串“周珩”
+      // document.write(array[0]);
+      // //遍历数组
+      // var arr=['red','green','blue'];
+      // for(var i=0; i<3; i++){
+      //     document.write(arr[i]);
+      // }
+      //声明数组并赋值
+      var array = [3, 7, 8, 2, 5];
+      var sum = 0;
+      var avg = 0;
+      var max = 0;
+      max = array[0];
+      for (var i = 0; i < array.length; i++) {
+        //和
+        sum += array[i];
+        //计算
+        // if (array[i] > max) {
+        //   //最大值
+        //   max = array[i];
+        // }
+        // max = array[i] > max ? array[i] : max;
+      }
+      //平均值
+      avg = sum / array.length;
+      console.log("和:" + sum);
+      console.log("平均值:" + avg);
+      console.log("最大值：" + max);
+    </script>
+  </head>
+  <body></body>
+</html>

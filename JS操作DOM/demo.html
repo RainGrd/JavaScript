@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM元素获取</title>
+</head>
+<style>
+    .className {
+        background-color: pink;
+        width: 200px;
+        height: 300px;
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <ul class="nav ">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+    </ol>
+    <!-- <div class="box">盒子1</div>
+    <div class="box">盒子2</div> -->
+    <p>
+        我是文字：
+        <span>123</span>
+    </p>
+    <button id='one'>第一张</button>
+    <button id='two'>第二张</button>
+    <img src="images/aftermoon.gif" alt="">
+    <div>
+        className修改样式操作
+    </div>
+</body>
+<script type="text/javascript">
+    var list = document.getElementsByTagName('li');
+    console.log(list);
+    console.log(list[0]);
+    var ol = document.getElementsByTagName('ol');
+    console.log(ol[0].getElementsByTagName('li'))
+    //通过HTML5新增的元素获取;
+    //通过类名进行获取
+    var boxS = document.getElementsByClassName('box');
+    console.log(boxS);
+    //
+    var first = document.querySelector('.box');
+    console.log(first);
+    var allBox = document.querySelectorAll('.box');
+    console.log(allBox);
+    //返回body元素
+    var bodyEle = document.body;
+    console.log(bodyEle); //返回标签
+    console.dir(bodyEle); // 返回里面的值
+    //返回HTML元素
+    var htmlEle = document.documentElement;
+    console.log(htmlEle);
+    //innerText和inner的区别
+    var p = document.querySelector('p').innerHTML = '我是HTML';
+    //修改元素属性
+    var one = document.getElementById('one');
+    var two = document.getElementById('two');
+    var img = document.querySelector('img');
+    one.onclick = function () {
+        img.src = "images/aftermoon.gif";
+        img.title = '第一张';
+    }
+    two.onclick = function () {
+        img.src = "images/moon.gif";
+        img.title = '第二张';
+    }
+    //利用它们进行CSS样式修改
+    var test = document.querySelector('div');
+    test.onclick = function () {
+
+        //让我们的div的类名为className
+        this.className = 'className';
+    }
+</script>
+
+</html>

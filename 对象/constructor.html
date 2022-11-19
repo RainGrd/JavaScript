@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用构造函数创建对象</title>
+</head>
+<script>
+    //创建构造函数的语法
+    // function 构造函数名() {
+    //     this.属性 = 值
+    //     this.方法 = function () {}
+
+    // }
+    //调用构造函数
+    // new 构造函数名();
+    //测试
+    function Start(name, age, sex) {
+        //设置这个对象的共同属性
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sing = function (sang) {
+            console.log(sang);
+        }
+    }
+    var ldh = new Start('刘德华', 18, '男');
+    console.log(ldh.name);
+    console.log(ldh['age']);
+    ldh.sing('冰雨');
+    /* 
+    注意事项
+    1.构造函数名字首字母大写
+    2.我们构造函数不需要return 就可以返回结果
+    3.调用构造函数时必须要用new关键字使用,并且返回的数据类型是一个对象
+    4.我们只要调用构造函数就创建一个对象
+    5.我们的属性和方法前面必须添加this
+    6.调用方法时只需要对象.方法名()
+    */
+</script>
+
+<body>
+
+</body>
+
+</html>

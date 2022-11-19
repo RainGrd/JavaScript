@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型转换演示</title>
+    <script>
+        //1. 把数字型转换成字符串型 
+        var num=12;
+        //toString()方法
+        var str=num.toString();
+        console.log(str);
+        //利用String()方法
+        console.log(String(num));
+        //利用+拼接空字符串实现转换
+        console.log(num+'');
+        //如何转换成数字型的
+        // var age=prompt("请输入你的年龄：");
+        //parInt(变量) 可以把字符型的转换成数字型的 得到的是整数 
+        // console.log(parseInt(age));
+        console.log(parseInt(3.14));    //取整
+        console.log(parseInt('120px')); //会自动把数字后面的单位去掉
+        console.log(parseFloat('36s25.8id'));
+        //parFloat(变量) 可以把字s符型的转换成数字型的 得到的是整数或者是浮点数
+        // console.log(parseFloat(age));
+        console.log(parseFloat(3.14));    //取整
+        console.log(parseFloat('120px')); //会自动把数字后面的单位去掉
+        //利用Number(变量)方法强制转换成Number数据类型
+        var str='123';
+        console.log(Number(str));
+        //利用算法运算符 - * / 进行隐式转换
+        console.log('123'-'120');
+        console.log('123'*'3');
+        console.log('123'/'2');
+        //3. 如何转换成布尔型
+        console.log(Boolean(''));   //false
+        console.log(Boolean(0));   //false
+        console.log(Boolean(NaN));   //false
+        console.log(Boolean(null));   //false
+        console.log(Boolean(undefined));   //false
+        console.log(Boolean('小白')); //true
+        console.log(Boolean(12));     //true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课后练习</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //创建一个构造函数
+    function Animal(name, age, color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+    //封装
+    Animal.prototype.getName = function () {
+        return this.name;
+    }
+    Animal.prototype.getAge = function () {
+        return this.age;
+    }
+    Animal.prototype.getColor = function () {
+        return this.color;
+    }
+    //子类
+    function Poultry(name, age, color, leg) {
+        //一次继承
+        Animal.call(this, name, age, color);
+        this.leg = leg;
+    }
+    //创建方法
+    Poultry.prototype.getLeg = function () {
+        return this.leg;
+    }
+    //二次继承 
+    Poultry.prototype = new Animal();
+    //显示信息的方法
+    Poultry.prototype.info = function () {
+        //创建节点
+        var p = document.createElement("p");
+        p.innerHTML = "我是一个" + this.color + "的" + this.name + ",我已经" + this.age + "岁了,我有" + this.leg + "条腿";
+        //返回P节点
+        return p;
+    }
+    var p1 = new Poultry("小狗狗", 1, "灰色", 4);
+    document.body.appendChild(p1.info());
+    var p2 = new Poultry("茶杯喵", 2, "白色", 4);
+    document.body.appendChild(p2.info());
+</script>
+
+</html>

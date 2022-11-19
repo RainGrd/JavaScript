@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>病毒弹窗</title>
+</head>
+<script type="text/javascript">
+    //打开页面
+
+    //设置定时器
+    var time = setInterval(function openWin() {
+        //随机数
+        var round = Math.floor(Math.random() * 1000);
+        console.log(round);
+        //
+        window.open('', '', 'top=' + round + ',left=' + round + ',width=' + round + ' ,height=' + '');
+    }, 1000)
+    //设置关闭定时器
+    function closeWin() {
+        clearInterval(time);
+    }
+</script>
+
+<body>
+    <div style="margin:0 auto; width: 990px; height: 990px">
+        <button onclick="closeWin()">点我关闭</button>
+    </div>
+</body>
+
+</html>

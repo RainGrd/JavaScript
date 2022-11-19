@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新浪网导航</title>
+    <style>
+        .index {
+            height: 63px;
+            margin-left: 20px;
+            text-align: center;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: inline-block;
+        }
+
+        .index li a:hover {
+            color: #40bbcd;
+        }
+
+        .index li a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            width: 90px;
+            line-height: 63px;
+        }
+
+        .index li {
+            position: relative;
+        }
+
+        li:hover .block {
+            display: block;
+        }
+
+        .block {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: -30px;
+        }
+
+        .block p {
+            margin: 0px;
+            width: 120px;
+            line-height: 20px;
+            background-color: #000;
+            border-radius: 5px;
+        }
+
+        .block p a {
+            display: inline-block;
+            width: 120px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #9D6E6E;
+        }
+
+        .block p a:hover {
+            border: 0px;
+            color: #40bbcd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 首页导航 -->
+    <div class="index">
+        <ul>
+            <li><a href="#">青鸟职教</a>
+                <div class="block">
+                    <p>
+                        <a href="#">职教简介</a>
+                        <a href="#">发展历程</a>
+                        <a href="#">媒体报道</a>
+                        <a href="#">奖项荣誉</a>
+                        <a href="#">联系我们</a>
+                    </p>
+                </div>
+            </li>
+            <li><a href="#">教学管理 </a>
+                <div class="block">
+                    <p>
+                        <a href="#">师资力量</a>
+                        <a href="#">班级管理</a>
+                        <a href="#">教学实施.</a>
+                    </p>
+                </div>
+            </li>
+            <li><a href="#">学员风采 </a>
+                <div class="block">
+                    <p>
+                        <a href="#">学员活动</a>
+                        <a href="#">学员故事</a>
+                        <a href="#">学员作品</a>
+                        <a href="#">学员心情</a>
+                    </p>
+                </div>
+            </li>
+            <li><a href="#">青鸟就业 </a>
+                <div class="block">
+                    <p>
+                        <a href="#">就业保障</a>
+                        <a href="#">职场攻略</a>
+                    </p>
+                </div>
+            </li>
+            <li><a href="#">学员服务 </a>
+                <div class="block">
+                    <p>
+                        <a href="#">校区查询</a>
+                        <a href="#">学籍查询</a>
+                        <a href="#">证书查询</a>
+                        <a href="#">教员查询</a>
+                        <a href="#">鹊云题库</a>
+                        <a href="#">鹊产品站</a>
+                        <a href="#">户端下载</a>
+                        <a href="#">校区管理平台</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // 利用JS给导航条 
+    var nav = document.querySelector('.block');
+    var list = nav.children; //获取其中li子节点
+    //通过循环进行设置
+    for (var i = 0; i < list.length; i++) {
+        list[i].onmouseover = function () {
+            this.children[1] = style.display = 'inline-block';
+            console.log('yes');
+        }
+        list[i].onmouseout = function () {
+            this.children[1] = style.display = 'none';
+            console.log('no');
+        }
+    }
+</script>
+
+</html>

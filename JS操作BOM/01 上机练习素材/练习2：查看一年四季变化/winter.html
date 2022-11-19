@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>冬</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+
+    img {
+      border: 0;
+      padding: 5px;
+    }
+
+    td {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  </style>
+</head>
+<script type="text/javascript">
+  //春
+  function setSpring() {
+    location.href = '../练习2：查看一年四季变化/spring.html'
+  }
+  //夏
+  function setSummer() {
+    location.href = '../练习2：查看一年四季变化/summer.html'
+  }
+  //秋
+  function setAutumn() {
+    location.href = '../练习2：查看一年四季变化/autumn.html'
+  }
+  //前进
+  function advance() {
+    history.go('1');
+  }
+  //后退
+  function retreat() {
+    history.go('-1');
+  }
+</script>
+
+<body>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="images/winter.jpg" alt="冬天" /></td>
+      <td>冬雪――忽如一夜春风来，千树万树梨花开<br />
+        冬梅――不是一番寒彻骨，争得梅花扑鼻香<br />
+        冬景――岸容待腊将舒柳，山意冲寒欲放梅<br />
+        冬天――琥珀珠海黏行处雪，棕榈帚扫卧来云<br />
+        冬夜――岁华皆采获，冬晚共严枯<br />
+        冬风――飘飘送下遥天雪，飒飒吹干旅命烟<br />
+        冬思――岁寒，然后知柏之后凋也<br />
+        冬狩――会挽雕弓如满月，西北望，射天狼<br />
+        冬愁――云横秦岭家何在，雪拥蓝关马不前<br />
+        冬行――草枯鹰眼疾，雪尽马蹄轻<br />
+        冬恨――夜阑卧听风吹雨，铁马冰河入梦来<br />
+        <a href="#" onclick="setSpring()">夏天</a>
+        <a href="#" onclick="setSummer()">夏天</a>
+        <a href="#" onclick="setAutumn()">秋天</a>
+        <a href="#" onclick="retreat()">后退</a>
+        <a href="#" onclick="advance()">前进</a>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业</title>
+</head>
+<script type="text/javascript">
+    var count = parseInt(prompt('请输入考试科目的数量'));
+    //进行数量验证
+    function getCount(count) {
+        var flag = true;
+        if (count <= 0 || isNaN(count) == true) {
+            flag = false;
+            return flag;
+        }
+    }
+    //进行判断
+    if (getCount(count) == false) {
+        alert("无效数字");
+    } else {
+        var sum = getResult(count);
+        alert(count + '门科的总成绩为：' + sum);
+    }
+    //获取学生每科的科目成绩
+    function getResult(count) {
+        var result = 0;
+        for (var i = 1; i <= count; i++) {
+            result += parseInt(prompt('请输入第' + i + '门的成绩'));
+            if (isNaN(result) == true) {
+                alert('无效数字');
+                //暂停循环
+                break;
+            }
+        }
+        return result;
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

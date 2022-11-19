@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器:setTimeout</title>
+    <script type="text/javascript">
+        // //根据函数进行定时
+        setTimeout(function () {
+            alert('成功!');
+        }, [2000])
+        /* 利用函数名进行定时 */
+        function calkBack() {
+            console.log('爆炸了！');
+        }
+        setTimeout(calkBack, 3000)
+        //利用字符串自定义函数进行定时
+        setTimeout('calkBack()', 3000)
+        //5秒隐藏广告
+        window.onload = function () {
+            var ad = document.querySelector('.ad');
+            setTimeout(function () {
+                ad.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</head>
+
+<body>
+    <img src="images/smile.gif" alt="" class="ad">
+</body>
+
+</html>

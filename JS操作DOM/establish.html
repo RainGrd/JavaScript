@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建节点</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <button>点我</button>
+</body>
+<script>
+    //1 创建节点元素节点
+    var li1 = document.createElement('li');
+    //2 添加节点元素节点    node=父级 child()子级
+    var ul = document.querySelector('ul'); //获取父级
+    ul.appendChild(li1);
+    //3 在前面准加元素节点
+    var li2 = document.createElement('li');
+    ul.insertBefore(li2, ul.children[0]);
+    //4 复制元素节点
+    var btn = document.querySelector('button');
+    btn.onclick = function () {
+        ul.cloneNode(true);
+        
+    }
+</script>
+
+</html>

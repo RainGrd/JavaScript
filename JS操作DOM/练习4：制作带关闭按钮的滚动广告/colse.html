@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>带关闭按钮的滚动广告</title>
+	<style type="text/css">
+		#main {
+			text-align: center;
+		}
+
+		#float {
+			position: absolute;
+			left: 30px;
+			top: 60px;
+			z-index: 1;
+		}
+
+		#close {
+			position: absolute;
+			top: 60px;
+			left: 134px;
+			z-index: 2;
+			cursor: hand;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="close" onClick="adv_close()"><img src="images/close.jpg"></div>
+	<div id="float"><img src="images/advpic.jpg"></div>
+	<div id="main"><img src="images/contentpic.jpg"></div>
+</body>
+<script>
+	//关闭图片函数
+	function adv_close() {
+		document.getElementById("close").style.display = "none";
+		document.getElementById("float").style.display = "none";
+	}
+	var adverTop = ''; //页面顶端距离
+	var adverLeft = ''; //页面左边距离
+	var adverRight = '';
+	var floatObj = ''; //第一个图片
+	var closeObj = ''; //第二个图片
+	//移动函数
+	function inix() {
+		floatObj = document.getElementById("float");
+		closeObj = document.getElementById("close");
+		if (floatObj.currentStyle) {
+			adverTop = parseInt(adverTop.currentStyle.top);
+			adverLeft = parseInt(adverLeft.currentStyle.left);
+			adverRight = parseInt(adverRight.currentStyle.right)
+			console.log(adverRight);
+		} else {
+			adverTop = parseInt(document.defaultView.getComputedStyle(floatObj, null).top);
+			adverLeft = parseInt(document.defaultView.getComputedStyle(floatObj, null).left);
+			adverRight = parseInt(document.defaultView.getComputedStyle(floatObj, null).right)
+		}
+
+	}
+	//移动函数
+	function move() {
+		var sTop = parseInt(document.documentElement.scrollTop || document.body.scrollTop);
+		var sLeft = parseInt(document.documentElement.scrollLeft || document.body.scrollLeft);
+		var sRight = parseInt(document.defaultView.scrollRight || document.body.scrollRight)
+		floatObj.style.top = adverTop + sTop + "px";
+		floatObj.style.left = adverLeft + sLeft + "px";
+		closeObj.style.top = adverTop + sTop + "px";
+		closeObj.style.right = adverRight + sRight + "px";
+	}
+	window.onload = inix;
+	window.onscroll = move;
+</script>
+
+</html>

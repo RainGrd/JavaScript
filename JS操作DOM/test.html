@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <input type="radio" name="book" onclick="books()">我和狗狗一起活下来
+        <input type="radio" name="book" onclick="books()">灰霾来了怎么办?
+    </p>
+    <div></div>
+</body>
+<script>
+    //
+    function books() {
+        //先创建节点
+        var ele = document.getElementsByName('book');
+        //
+        var name = document.getElementsByTagName('div')[0];
+        //判断按钮选中事件
+        if (ele[0].checked) {
+            var img = document.createElement('img');
+            img.setAttribute('src', 'images/dog.jpg');
+
+        } else if (ele[1].checked) {
+            var img = document.createElement('img');
+            img.setAttribute('src', 'images/mai.jpg');
+            img.setAttribute('onclick', 'copyNode()');
+
+        }
+        name.appendChild(img);
+    }
+
+    function copyNode() {
+        var name = document.getElementsByTagName('div')[0];
+        var copy = name.lastChild.cloneNode(false);
+        name.insertBefore(copy, name.firstChild);
+    }
+</script>
+
+</html>

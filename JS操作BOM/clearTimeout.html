@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>停止定时器clearTimeout</title>
+    <script type="text/javascript">
+        // 根据函数进行定时
+        var time1 = setTimeout(function () {
+            alert('爆炸了!');
+        }, [2000]);
+        window.onload = function () {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                clearTimeout(time1);
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button>点我停止定时器！</button>
+</body>
+
+</html>

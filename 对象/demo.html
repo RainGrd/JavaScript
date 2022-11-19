@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var o1 = {};
+    var o2 = new Object();
+    var o3 = new f1();
+
+    function f1() {};
+    var f2 = function () {};
+    var f3 = new Function('str', 'console.log(str)');
+
+    console.log(typeof Object); //function 
+    console.log(typeof Function); //function  
+
+    console.log(typeof f1); //function 
+    console.log(typeof f2); //function 
+    console.log(typeof f3); //function   
+
+    console.log(typeof o1); //object 
+    console.log(typeof o2); //object 
+    console.log(typeof o3); //object
+    //构造器
+    var b = new Array();
+    b.constructor === Array;
+    b.__proto__ === Array.prototype;
+
+    console.log("Array = " + (typeof b.__proto__));
+    var c = new Date();
+    c.constructor === Date;
+    c.__proto__ === Date.prototype;
+
+    var d = new Function();
+    d.constructor === Function;
+    d.__proto__ === Function.prototype;
+    //函数对象  
+    Number.__proto__ === Function.prototype // true
+    Number.constructor == Function //true
+
+    Boolean.__proto__ === Function.prototype // true
+    Boolean.constructor == Function //true
+
+    String.__proto__ === Function.prototype // true
+    String.constructor == Function //true
+
+    // 所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身
+    Object.__proto__ === Function.prototype // true
+    Object.constructor == Function // true
+
+    // 所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身
+    Function.__proto__ === Function.prototype // true
+    Function.constructor == Function //true
+
+    Array.__proto__ === Function.prototype // true
+    Array.constructor == Function //true
+
+    RegExp.__proto__ === Function.prototype // true
+    RegExp.constructor == Function //true
+
+    Error.__proto__ === Function.prototype // true
+    Error.constructor == Function //true
+
+    Date.__proto__ === Function.prototype // true
+    Date.constructor == Function //true
+    //包含引用类型值的原型属性会被所有实例共享，这会导致对一个实例的修改会影响另一个实例；
+    // function SuperType() {
+    //     this.colors = ["red", "blue", "green"];
+    // }
+
+    // function SubType() {}
+    // //继承了SuperType
+    // SubType.prototype = new SuperType();
+    // var instance1 = new SubType();
+    // //所以我看到
+    // instance1.colors.push("black");
+    // alert(instance1.colors); //red,blue,green,black
+
+    // var instance2 = new SubType();
+    // alert(instance2.colors); //red,blue,green,black
+    //原型链继承
+    function Humans1() {
+        this.foot = 2;
+    }
+    Humans1.prototype.getFoot = function () {
+        return this.foot;
+    }
+
+    function Man1() {
+        this.head = 1;
+    }
+    //继承了Humans
+    Man1.prototype = new Humans1();
+    //添加新方法
+    Man1.prototype.getHead = function () {
+        return this.head;
+    }
+    //重写父类型中的方法
+    Man1.prototype.getFoot = function () {
+        return false;
+    }
+    var man1 = new Man1();
+    console.log(man1.getFoot()); //false
+    //借用 构造函数 实现继承
+    function Humans2() {
+        this.clothing = ["trousers", "dress", "jacket"];
+    }
+
+    function Man2() {
+        Humans2.call(this);
+    }
+    var man3 = new Man2();
+    man3.clothing.push("coat");
+    console.log(man3.clothing);
+    var man4 = new Man2();
+    console.log(man4.clothing);
+    //组合继承
+    function Humans3(name) {
+        this.name = name;
+        this.clothing = ["trousers", "dress", "jacket"];
+    }
+    //sayName函数继承Humans3的原型对象的实例
+    Humans3.prototype.sayName = function () {
+        console.log(this.name);
+    }
+
+    function Man3(name, age) {
+        Humans3.call(this, name); //继承父类属性
+        this.age = age;
+    }
+    Man3.prototype = new Humans3(); //继承方法
+    Man3.prototype.sayAge = function () {
+        console.log(this.age);
+    }
+    var man5 = new Man3("mary", 38);
+    man5.clothing.push("coat");
+    console.log(man5.clothing); //输出“trousers,dress,jacket coat”
+    man5.sayName(); //输出mary
+    man5.sayAge(); //输出38
+    var man6 = new Man3("tom", 26);
+    console.log(man6.clothing); //输出“trousers,dress,jacket”
+    man6.sayName(); //输出tom
+    man6.sayAge(); //输出26
+    // 案例
+    function Animal(foot, name) {
+        this.foot = 4;
+        this.name = "动物";
+    }
+    Animal.prototype.showFoot = function () {
+        return this.foot;
+    };
+
+    function Dog(foot, name) {
+        Animal.call(this, foot, name);
+    }
+    Dog.prototype = new Animal();
+    var dog1 = new Dog(3, "大黄");
+    console.log(dog1.showFoot()); //
+    console.log(dog1.name); //
+</script>
+
+</html>

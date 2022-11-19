@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时钟特效</title>
+</head>
+
+
+
+<body>
+    <p id="p"></p>
+</body>
+<script>
+    var midday = '中午'; //上午、中午、下午
+    var p = document.getElementById('p')
+    var today = 0;
+    var year = 0;
+    var month = 0;
+    var day = 0;
+    var hour = 0;
+    var minute = 0;
+    var second = 0;
+
+    function getDate() {
+        //创建对象
+        today = new Date();
+        year = today.getFullYear(); //获取年份
+        month = today.getMonth() + 1; //获取月份
+        day = today.getDate(); //获取天数
+        hour = today.getHours(); //获取当前小时
+        minute = today.getMinutes(); //获取当前分钟
+        week = today.getDay();
+        var p = document.getElementById("p");
+        p.innerHTML = '<h1>今天日期:' + year + '年' + month + '月' + day + '日</h1>' +
+            '<h1>现在时间：' + hour + '点' + minute + '分' + '</h1>' +
+            '<h1>下午好！欢迎来贵美！</h1>'
+    }
+    //用于实时刷新
+    getDate();
+    setInterval(getDate, 1000);
+</script>
+
+</html>

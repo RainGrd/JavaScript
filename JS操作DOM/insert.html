@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc创建元素的方式</title>
+</head>
+
+<body>
+    <button>点我</button>
+    <p>
+        abc
+    </p>
+    <div class="inner"></div>
+    <div class="create"></div>
+</body>
+<script>
+    //1 document.write() 创建元素
+    var btn = document.querySelector('button');
+    btn.onclick = function () {
+        document.write('<div>123</div>');
+    }
+    //innerHTML 创建元素
+    var inner = document.querySelector('.inner');
+    inner.innerHTML = '<a href="#">百度</a>';
+    // document.createElement()创建元素;
+    var create = document.querySelector('.create');
+    var a = document.createElement('a');
+    create.appendChild(a);
+
+</script>
+
+</html>

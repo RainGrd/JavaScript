@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS逻辑运算符演示</title>
+
+    <script>
+        // && 运算符演示 只要有一个条件为假，那么就返回false
+        console.log(3>5 && 3>2);    //false
+        console.log(3<5 && 3>2);    //true
+        // || 运算符演示  只要一个条件为真，那么就返回true
+        console.log(3>5 || 3>2);    //true
+        // ! 运算符演示 用于取反值，比如去true的相反值是false
+        console.log(!true);     //false
+        /* 
+        逻辑中断演示
+         */
+        // 逻辑中断与 &&
+        console.log(123 && 456);    //456
+        console.log(0 && 456);      //0
+        console.log(0 && 1+2 && 456*7890);  //0
+        // 逻辑中断或 ||
+        console.log(123 || 456);    //123
+        console.log(0 || 456);      //456
+        //示例
+        var num=0;
+        console.log(123||num++);
+        console.log(num);   //0
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

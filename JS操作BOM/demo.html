@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window属性演示</title>
+
+</head>
+
+
+<body>
+    <input type="button" onclick="openWin()" value="点我打开窗口" />
+    <input type="button" value="点我关闭窗口" onclick="closeWin()" />
+    <input type="button" value="点我关闭setTimeOut定时器" onclick="closeTimeOut()" />
+    <input type="button" value="点我关闭setInterval定时器" onclick="closeInterval()">
+    读取 <a href="dom_obj_attributes.php" target="_blank">Attr 对象</a>.
+    <img src="images/moon.gif" alt="moon">
+    <p id="demo">单击按钮以显示上述链接的目标属性的值</p>
+    <button onclick="myFunction()">点我</button>
+
+
+    <input value="OK">
+
+    <p>点击下面的按钮来设置按钮的类型属性。</p>
+    <button onclick="demoFunction()">点我</button>
+    <p>Internet Explorer 8 及更早的版本不支持 setAttribute 方法。</p>
+</body>
+<script>
+    console.log(window);
+    window.onload = function () {
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            alert('点击成功1！');
+        })
+        document.getElementById
+
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        alert('点击成功2！');
+    })
+    window.open('http://baidu.com')
+    window.confirm();
+    //window属性演示
+    var myWindow;
+    //用户输入框
+    window.prompt('用户输入框');
+    //警示框
+    window.alert('警示框');
+    //弹窗
+    window.confirm('这是弹窗！');
+    //setTimeout()定时器演示
+    var timeout = setTimeout(function () {
+        alert('这是setTimeout!');
+    }, 2000)
+    //setInterval()定时器演示
+    var interval = setInterval(function () {
+        alert('这是setInterval')
+    }, 5000)
+    //打开页面
+    function openWin() {
+        myWindow = window.open('', '', "width=200 ,height=100");
+        myWindow.document.write("<p>这是'我的窗口'</p>");
+
+    }
+    //关闭页面
+    function closeWin() {
+        myWindow.close();
+    }
+    //setTimeout()关闭函数
+    function closeTimeOut() {
+        window.clearTimeout(timeout);
+    }
+    //setInterval()关闭函数
+    function closeInterval() {
+        window.clearInterval(interval);
+    }
+    //getAttribute()函数演示
+    function myFunction() {
+        var a = document.getElementsByTagName("a")[0];
+        document.getElementById("demo").innerHTML = a.getAttribute("target");
+        var img = document.querySelector("img");
+        document.getElementById("demo").innerHTML = img.getAttribute('alt');
+    }
+
+    function demoFunction() {
+        document.getElementsByTagName("INPUT")[0].setAttribute("type", "button");
+    };
+</script>
+
+</html>

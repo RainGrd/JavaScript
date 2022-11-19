@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课后练习第一题</title>
+</head>
+
+<body>
+    <div id="student"></div>
+</body>
+<script>
+    //创建一个学生对象
+    var student = new Object();
+    student.name = "高乐乐";
+    student.age = 15;
+    student.introduce = "我叫" + name + "我是一个初中三年级的学<br>生，我非常喜欢音乐和打篮球";
+    student.stuInfo = function () {
+        var info = "姓名：" + this.name + "<br>年龄：" + this.age + "<br>自我介绍：" + this.introduce;
+        return info;
+    }
+    document.getElementById('student').innerHTML = student.stuInfo();
+</script>
+
+</html>

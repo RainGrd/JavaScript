@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作业</title>
+  </head>
+  <script type="text/Javascript">
+    var array = ['orange', 'Apple', 'peach', 'banana'];
+    var time = 0;
+    document.write('以下字段中:')
+    for (var i = 0; i <array.length; i++) {
+      document.write('</br>'+array[i])
+      if (array[i].indexOf('a') || array[i].indexOf('A')) {
+        time++;
+      }
+    }
+    document.writeln("</br>包含a或A的字段有：" + time + "个");
+  </script>
+  <body></body>
+</html>

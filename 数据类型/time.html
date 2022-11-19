@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间表</title>
+    <script type="text/javascript">
+        var time = parseInt(prompt('请输入时间：'));
+        //判断时长
+        if (time >= 6 && time <= 12) {
+            document.write('<h1>上午好！欢迎来到贵美 </h1>');
+            getTime(time);
+        } else if (time >= 13 && time <= 20) {
+            document.write('<h1>下午好！欢迎来到贵美！</h1>')
+            getTime(time);
+        } else if (time >= 25) {
+            alert('你输入的时间不符合标准！');
+        } else {
+            document.write('<h1>夜深了！该休息了！</h1>')
+            getTime(time);
+        }
+        //获取时间，来设置时长
+        function getTime(time) {
+            //通过循环输出表情
+            for (var i = 0; i < time; i++) {
+                if (time >= 6 && time <= 12) {
+                    document.write('<img src="images/smile.gif" alt="">');
+                } else if (time >= 13 && time <= 20) {
+                    document.write('<img src="images/aftermoon.gif" alt="">')
+                } else {
+                    document.write('<img src="images/moon.gif" alt="">')
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <img src="images/smile.gif" alt="">
+    <img src="images/aftermoon.gif" alt="">
+    <img src="images/moon.gif" alt=""> -->
+    <!-- <br> -->
+</body>
+
+</html>

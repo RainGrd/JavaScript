@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS函数演示</title>
+</head>
+<script type="text/javaScript">
+  /* 用户输入任意数字的任意算术运算，并弹出运算后的结果 */
+      var one=parseInt(prompt('请输入第一个数：'));
+      var two=parseInt(prompt('请输入第二个数：'));
+      var operator=prompt('请输入运算符号：');
+      //计算
+      function getCalculator(one,two,operator) {
+        var calculator=0;
+        switch(operator) {
+          case '+':
+            calculator=one+two;
+            break;
+          case '-':
+            calculator=one-two;
+            break;
+          case '*':
+            calculator=one*two;
+            break;
+          case '/':
+            calculator=one/two;
+            break;
+          default:
+            calculator='只支持加减乘除！';
+            break;
+        }
+        return calculator;
+      }
+      var calculator=getCalculator(one,two,operator);
+      alert('两数运算结果为：'+one+operator+two+'='+calculator);
+  </script>
+
+<body></body>
+
+</html>

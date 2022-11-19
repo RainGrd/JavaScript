@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的购物车</title>
+    <link rel="stylesheet" href="css/shopping.css">
+</head>
+
+<body>
+    <section id="shopping">
+        <div id="cart" onmouseover="over()" onmouseout="out()">我的购物车<span>1</span></div>
+        <div id="cartList">
+            <h2>最新加入的商品</h2>
+            <ul>
+                <li><img src="images/makeup.jpg"></li>
+                <li>倩碧经典三部曲套装（液体皂200ml+明肌2号水200ml+润肤乳125ml）</li>
+                <li>¥558.00×1<br />删除</li>
+            </ul>
+            <div class="footer">共1件商品<span>共计¥558.00</span> <span>去购物车</span></div>
+        </div>
+    </section>
+    <script>
+        function over() {
+            //style属性
+            document.getElementById('cart').style.cssText =
+                " background-color='#fff'; border-bottom: 0px; z-index='100'; ";
+            document.getElementById('cartList').style.cssText = "display:block;position='relative'; top='-1px';"
+            // //获取样式的属性
+            console.log(document.defaultView.getComputedStyle(cartList, null).display);
+            //className属性
+            /*             document.getElementById('cart').className = "cartOver";
+                        document.getElementById('cartList').className = "cartListOver"; */
+        }
+
+        function out() {
+            //style属性
+            document.getElementById('cart').style.cssText =
+                " background-color='#f9f9f9'; border-bottom: 1px solid #dcdcdc; z-index='100'; ";
+            document.getElementById('cartList').style.cssText = "display:none;"
+            //className属性
+            document.getElementById('cart').className = "cartOut";
+            document.getElementById('cartList').className = "cartListOut";
+
+        }
+    </script>
+</body>
+
+</html>

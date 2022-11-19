@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>查看一年四季的变化</title>
+  <style type="text/css">
+    table {
+      margin-top: 0px;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-left: auto;
+      border-top: 1px #cccccc solid;
+      border-left: 1px #cccccc solid;
+      width: 400px;
+    }
+
+    img {
+      border: 0;
+      padding: 5px;
+    }
+
+    td {
+      font-size: 14px;
+      line-height: 25px;
+      text-align: center;
+      border-bottom: 1px #cccccc solid;
+      border-right: 1px #cccccc solid;
+    }
+  </style>
+  <script type="text/javascript">
+    //春
+    function setSpring() {
+      location.href = '../练习2：查看一年四季变化/spring.html';
+    }
+    //夏
+    function setSummer() {
+      location.href = '../练习2：查看一年四季变化/summer.html';
+    }
+    //秋
+    function setAutumn() {
+      location.href = '../练习2：查看一年四季变化/autumn.html';
+    }
+    //冬
+    function setWinter() {
+      location.href = '../练习2：查看一年四季变化/winter.html';
+    }
+    //刷新本页
+    function refresh() {
+      history.go(0);
+    }
+  </script>
+</head>
+
+<body>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="images/1.jpg" /></td>
+      <td><img src="images/2.jpg" /></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="setSpring()">春</a></td>
+      <td><a href="#" onclick="setSummer()">夏</a></td>
+    </tr>
+    <tr>
+      <td><img src="images/3.jpg" /></td>
+      <td><img src="images/4.jpg" /></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="setAutumn()">秋</a></td>
+      <td><a href="#" onclick="setWinter()">冬</a></td>
+    </tr>
+    <tr>
+      <td colspan="2"><a href="#" onclick="refresh()">刷新本页</a></td>
+    </tr>
+  </table>
+
+</body>
+
+
+</html>

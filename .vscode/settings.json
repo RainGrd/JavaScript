@@ -1,0 +1,14 @@
+"editor.tokenColorCustomizations":{
+    "comments": {
+        // 设置字体样式 加粗 下划线 斜体等
+        "fontStyle": "", // bold italic underline 
+        // 设置字体颜色
+        // "foreground": "#4caee2"
+        "foreground": "#867171"
+    }, // 注释
+    // "keywords": "#0a0", // 关键字
+    // "variables": "#f00", // 变量名
+    // "strings": "#e2d75dbd", // 字符串
+    // "functions": "#5b99fcc9", // 函数名
+    // "numbers": "#AE81FF" // 数字
+},

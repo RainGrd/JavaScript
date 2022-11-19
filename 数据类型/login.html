@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登录</title>
+</head>
+<script>
+  //获取用户信息
+  function getUserInfo() {
+    var userName = prompt("请输入你的用户名：");
+    var password = parseInt(prompt("请输入你的密码："));
+    //弹出警示框
+    alert(login(userName, password));
+  }
+
+  function login(username, password) {
+    //储存的用户名和密码
+    var storageUsername = "admin";
+    var storagePassword = 123456;
+    //返回结果
+    var str = '';
+    if (username !== storageUsername) {
+      str = "用户名输入错误！";
+    } else if (password !== storagePassword) {
+      str = "密码输入错误！";
+    } else {
+      str = "登录成功,欢迎你！";
+    }
+    return str;
+  }
+</script>
+
+<body>
+  <input type="button" value="点我登录" onclick="getUserInfo()">
+</body>
+
+</html>
